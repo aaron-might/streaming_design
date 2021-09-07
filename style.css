@@ -7,17 +7,19 @@
 body {
     background-color: #000;
     font-family: "Roboto", sans-serif;
-    margin: 0;
     color:white;
+    margin: 0;
 }
 
 .container{
-    margin: 0;
+    margin: 0 auto;
     width: 1000px;
     max-width: 100%;
+
 }
 .row {
     display: flex;
+    flex-wrap: wrap;
 }
 .col {
     font-size: 1.5rem;
@@ -27,7 +29,7 @@ body {
 }
 .col img{
     max-width: 100%;
-    position: relative;
+    /* position: relative; */
 }
 .image-container{
     position: relative;
@@ -35,37 +37,35 @@ body {
 .image-container::after{
     content:'\f04b';
     /* background-color: #fff; */
-    position: absolute;
-    border: 30px solid white;
+    border: 20px solid white;
     border-left-color: transparent;
     border-top-color: transparent;
+    position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%) rotate(-45deg);
     height: 0px;
     width: 0px;
     z-index: 10;
-
 }
 nav {
+    border-bottom: 5px solid #fff;
     display: flex;
     justify-content: space-between;
-    border-bottom: 5px solid #fff;
-    padding :3rem 0;
     align-items: flex-end;
     text-align: center;
+    padding :2rem 0;
 }
 .logo {
     font-size: 2rem;
 }
 .logo i {
-    font-size: 4rem;
-    font-size: 2.5rem;
     display: block;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-button{
+button {
     background-color: #fff;
     border: 0;
     color: black;
@@ -82,4 +82,17 @@ button{
 }
 .orange {
     color: #d27752;
+}
+@media screen and (max-width :768px){
+    nav button{
+        display: none;
+    }
+    nav {
+        justify-self: center;
+    }
+    .col{
+        width:100%;
+    }
+}
+    
 }
